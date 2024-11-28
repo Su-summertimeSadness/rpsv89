@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock title %}</title>
+  <script src="{% static 'mysite/js/jquery-3.7.1.min.js.js'  %}"></script>
+</head>
+<body>
+
+{% block nav %}
+<a href="{% url 'post' %}">New Record</a>
+<a href="{% url 'show' %}">Show Records</a>
+{% endblock nav %}
+
+{% block content %}
+{% endblock content %}
+
+{% block script %}
+{% endblock script %}
+</body>
+</html>

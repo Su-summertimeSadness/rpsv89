@@ -1,0 +1,32 @@
+{% extends 'mysite/base.html' %}
+
+{% block title %} Main Page {% endblock title %}
+
+{% block content %}
+
+<h1>Add a Record</h1>
+
+<form class="container mt-5" action="{% url 'post' %}" method="post" id="myForm">
+    {% csrf_token %}
+
+    <div id="mini" class="card-header">
+        <p>Enter Username:</p>
+        <input name="username" class="aInput">
+    </div>
+
+    <button id="btn-add" type="button">Add Input</button>
+    <input type="submit" id="sub">
+
+</form>
+{% endblock content %}
+
+{% block script %}
+<script>
+    $(function(){
+    $('#btn-add').on('click', function(){
+    var idd = $('#myForm input:not([type=submit])').length;
+    $('#myForm #mini').append('<br/><div><p>Enter Username:</p><input class="aInput" name="username' + idd + '"></div>');
+        });
+    });
+</script>
+{% endblock script %}
