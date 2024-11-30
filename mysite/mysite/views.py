@@ -26,7 +26,7 @@ class MakeData(View):
 
 class Show(View):
     def get(self, request):
-        data = Name.objects.all()
+        data = Name.objects.values()
         return render(request, 'mysite/show.html', context={'data': data})
 
 
