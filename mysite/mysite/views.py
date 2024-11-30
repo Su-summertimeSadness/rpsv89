@@ -1,6 +1,8 @@
+from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from django.views import View
 from .models import Name
+
 
 # Create your views here.
 class Index(View):
@@ -23,5 +25,13 @@ class MakeData(View):
 class Show(View):
     def get(self, request):
         data = Name.objects.all()
-        data = list(data)
+
+
+
         return render(request, 'mysite/show.html', context={'data': data})
+
+def show_json(request):
+    data = Name.objects.values()
+    res = list(data)
+
+    return JsonResponse(res, safe=False)
