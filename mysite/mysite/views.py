@@ -11,6 +11,7 @@ class Index(View):
     def get(self, request):
         return render(request, 'mysite/index.html')
 
+
 class MakeData(View):
 
     def get(self, request):
@@ -22,16 +23,14 @@ class MakeData(View):
         record.save()
         return redirect('show')
 
+
 class Show(View):
     def get(self, request):
         data = Name.objects.all()
-
-
-
         return render(request, 'mysite/show.html', context={'data': data})
+
 
 def show_json(request):
     data = Name.objects.values()
     res = list(data)
-
     return JsonResponse(res, safe=False)
