@@ -178,6 +178,10 @@ module mysite.wsgi: загрузка указанного модуля wsgi
 
 `sudo ln -s /etc/nginx/sites-available/mysite_nginx.conf /etc/nginx/sites-enabled/`
 
+Или сделайте ссылку из проекта:
+
+`sudo ln -s /mysite/mysite/mysite_nginx.conf /etc/nginx/sites-enabled/`
+
 ---
 ### <a id="title3.3">3.3 Развертывание статических файлов</a>
 
