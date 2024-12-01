@@ -203,7 +203,7 @@ module mysite.wsgi: загрузка указанного модуля wsgi
 `sudo /etc/init.d/nginx restart`
 
 Чтобы проверить, правильно ли обслуживаются медиафайлы, добавьте изображение с именем media.png в каталог /path/to/your/project/project/media, а затем посетите http://localhost:8000/media/media.png - если это сработает, то вы будете знать, что nginx обслуживает файлы правильно.  
-(/main/mysite/media/123.jpg  http://localhost:8000/media/123.jpg )
+(/mysite/media/123.jpg  http://localhost:8000/media/123.jpg )
 
 Стоит не просто перезапустить nginx, а фактически остановить и затем запустить его снова, что позволит узнать, есть ли проблема и где она находится.
 
