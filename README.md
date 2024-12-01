@@ -91,11 +91,20 @@ cd mysite
 ---
 
 ## <a id="title2">Базовая установка и настройка uWSGI</a>
-### <a id="title1.2">2.1 Установите uWSGI в virtualenv</a>
+### <a id="title2.1">2.1 Установите uWSGI в virtualenv</a>
 
 `pip install uwsgi`
 
 Помните, что у вас должны быть установлены пакеты разработки Python. В случае Debian или производных от Debian систем, таких как Ubuntu, вам нужно установить pythonX.Y-dev, где X.Y - это ваша версия Python.
+
+Для проверки можно использовать файл test.py /mysite/mysite/test.py
+Вот его содержание:
+
+```
+def application(env, start_response):
+    start_response('200 OK', [('Content-Type', 'text/html')])
+    return [b"<h1>Hello world</h1>"]
+```
 
 Запустите для проверки uWSGI:
 
